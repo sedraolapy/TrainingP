@@ -2,11 +2,15 @@
 
 namespace Database\Seeders;
 
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class ServiceSeeder extends Seeder
+class ProvidedServiceSeeder extends Seeder
 {
+    /**
+     * Run the database seeds.
+     */
     public function run(): void
     {
         $services = [
@@ -17,7 +21,7 @@ class ServiceSeeder extends Seeder
         ];
 
         foreach ($services as $service) {
-            DB::table('services')->insert([
+            DB::table('provided_services')->insert([
                 'name' => $service,
                 'created_at' => now(),
                 'updated_at' => now(),

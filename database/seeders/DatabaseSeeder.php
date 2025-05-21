@@ -51,5 +51,20 @@ class DatabaseSeeder extends Seeder
         //     EmployeeCountSeeder::class,
         // ]);
 
+        // $this->call([
+        //     LanguageSeeder::class,
+        // ]);
+
+        // $this->call([
+        //     ProvidedServiceSeeder::class,
+        // ]);
+
+        // $this->call([
+        //     ExperienceAreaSeeder::class,
+        // ]);
+
+        $this->call([
+            UserTypeSeeder::class,
+        ]);
     }
 }
