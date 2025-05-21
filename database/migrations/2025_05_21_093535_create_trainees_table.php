@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('trainees', function (Blueprint $table) {
-            $table->id();
+            $table->unsignedBigInteger('id');
 
             $table->string('last_name');
 
@@ -35,6 +35,11 @@ return new class extends Migration
             ->constrained()
             ->onDelete('cascade')
             ->onUpdate('cascade');
+
+            $table->foreign('id')
+            ->references('id')
+            ->on('users')
+            ->onDelete('cascade');
 
             $table->timestamps();
         });

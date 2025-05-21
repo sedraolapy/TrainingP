@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         // $this->call([
-        //     ServiceSeeder::class,
+        //     ProvidedServiceSeeder::class,
         // ]);
 
         // $this->call([
@@ -48,23 +48,21 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         // $this->call([
-        //     EmployeeCountSeeder::class,
+        //     EmployeeNumberSeeder::class,
         // ]);
 
         // $this->call([
-        //     LanguageSeeder::class,
+        //     LanguagestableSeeder::class,
         // ]);
 
-        // $this->call([
-        //     ProvidedServiceSeeder::class,
-        // ]);
 
         // $this->call([
         //     ExperienceAreaSeeder::class,
         // ]);
 
-        $this->call([
-            UserTypeSeeder::class,
-        ]);
+        // $this->call([
+        //     UserTypeSeeder::class,
+        // ]);
+
     }
 }

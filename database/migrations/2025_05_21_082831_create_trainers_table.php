@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('trainers', function (Blueprint $table) {
-            $table->id();
+
+            $table->unsignedBigInteger('id');
 
             $table->string('last_name');
 
@@ -39,12 +40,21 @@ return new class extends Migration
             ->onUpdate('cascade');
 
             $table->foreignId('fields_of_work_id')
-            ->constrained('fields_of_work') 
+            ->constrained('fields_of_work')
             ->onDelete('cascade')
             ->onUpdate('cascade');
 
 
             $table->text('important_topics');
+
+            $table->foreign('id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
+
+            $table->enum('status', ['متاح طوال الأسبوع' , 'متاح فقط في أيام العطل' , 'غير متاح مؤقتًا' ]);
+            
+            $table->decimal('hourly_wage' , 8, 2);
 
             $table->timestamps();
         });

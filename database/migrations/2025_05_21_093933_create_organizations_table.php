@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('organizations', function (Blueprint $table) {
-            $table->id();
+            $table->unsignedBigInteger('id');
 
             $table->foreignId('type_id')
             ->constrained('sectors')
@@ -21,7 +21,7 @@ return new class extends Migration
 
             $table->string('website');
 
-            $table->foreignId('employee_counts_id')
+            $table->foreignId('employee_numbers_id')
             ->constrained()
             ->onDelete('cascade')
             ->onUpdate('cascade');
@@ -37,6 +37,13 @@ return new class extends Migration
             ->constrained()
             ->onDelete('cascade')
             ->onUpdate('cascade');
+
+            $table->string('work_type')->nullable();
+
+            $table->foreign('id')
+            ->references('id')
+            ->on('users')
+            ->onDelete('cascade');
 
             $table->timestamps();
         });

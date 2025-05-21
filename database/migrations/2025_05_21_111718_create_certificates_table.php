@@ -11,10 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('education_levels', function (Blueprint $table) {
+        Schema::create('certificates', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            
+
+            $table->string('issuing_organization');
+
+            $table->date('issue_date');
+
+            $table->foreignId('users_id')
+            ->constrained()
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
+
             $table->timestamps();
         });
     }
@@ -24,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('education_levels');
+        Schema::dropIfExists('certificates');
     }
 };

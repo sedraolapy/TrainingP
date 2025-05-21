@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class EmployeeCountSeeder extends Seeder
+class EmployeeNumberSeeder extends Seeder
 {
     public function run(): void
     {
@@ -18,7 +18,7 @@ class EmployeeCountSeeder extends Seeder
         ];
 
         foreach ($ranges as $range) {
-            DB::table('employee_counts')->insert([
+            DB::table('employee_numbers')->insert([
                 'range' => $range,
                 'created_at' => now(),
                 'updated_at' => now(),
